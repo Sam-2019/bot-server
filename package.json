@@ -1,11 +1,11 @@
 {
   "name": "bot-server",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node",
-    "dev": "nodemon",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "runner": "node runner.js"
   },
   "author": "Sam-2019 <samtmartey@gmail.com>",
