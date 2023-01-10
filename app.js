@@ -10,6 +10,6 @@ app.use(express.json());
 connectDB()
 
 const routes = require("./routes");
-app.use("/api", routes);
+app.use("/", routes);
 
 module.exports = app;

@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 //Get all Method
-router.get("/musings/:id", async (req, res) => {
+router.get("/api/:id", async (req, res) => {
   const authorization = req.headers.authorization;
 
   if (authorization != AUTH_KEY) {
