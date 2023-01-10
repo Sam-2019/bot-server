@@ -7,6 +7,10 @@ router.get("/", (req, res) => {
   res.json({ message: "Konnichiwa" });
 });
 
+router.get("/api", (req, res) => {
+  res.json({ message: "Konnichiwa" });
+});
+
 //Get all Method
 router.get("/api/:id", async (req, res) => {
   const authorization = req.headers.authorization;
