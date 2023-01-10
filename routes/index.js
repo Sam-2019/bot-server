@@ -3,6 +3,10 @@ const router = express.Router();
 const { AUTH_KEY } = require("../utils/config");
 const { switch_route } = require("../utils/switches");
 
+router.get("/", (req, res) => {
+  res.send("Konnichiwa");
+});
+
 //Get all Method
 router.get("/musings/:id", async (req, res) => {
   const authorization = req.headers.authorization;
