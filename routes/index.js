@@ -4,7 +4,7 @@ const { AUTH_KEY } = require("../utils/config");
 const { switch_route } = require("../utils/switches");
 
 router.get("/", (req, res) => {
-  res.send("Konnichiwa");
+  res.json({ message: "Konnichiwa" });
 });
 
 //Get all Method
