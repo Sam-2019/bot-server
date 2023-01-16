@@ -6,8 +6,6 @@ const bot = new Telegraf(TOKEN);
 bot.on("text", async (ctx) => {
   const url = ctx.message.text;
 
-  console.log(url)
-
   if (!url) {
     ctx.reply("No message");
   }
