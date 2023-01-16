@@ -6,12 +6,13 @@ export const bot = new Telegraf(TOKEN);
 bot.on("text", async (ctx) => {
   const url = ctx.message.text;
 
-  if (!url) {
-    ctx.reply("No message");
+  try {
+    await fetch(new URL(url));
+    const info = await postTransformer(url);
+    ctx.reply(info);
+  } catch (err) {
+    ctx.reply("Unsupported website");
   }
-
-  const info = await postTransformer(url);
-  return ctx.reply(info);
 });
 
 process.once("SIGINT", () => bot.stop("SIGINT"));
