@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node index.js --experimental-fetch",
+    "dev": "nodemon index.js --experimental-fetch",
     "runner": "node runner.js"
   },
   "author": "Sam-2019 <samtmartey@gmail.com>",
