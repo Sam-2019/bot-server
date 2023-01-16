@@ -2,13 +2,11 @@ import { linkPreviewGenerator } from "./link_preview.js";
 import { types } from "./switches.js";
 
 export const postTransformer = async (url) => {
-  const info = await linkPreviewGenerator(url);
-
-  console.log(info);
-
-  if (!info) {
+  if (!url) {
     return "Unsupported website";
   }
+
+  const info = await linkPreviewGenerator(url);
 
   const output = types(info, url);
   return `saved ${output}`;
