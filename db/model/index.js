@@ -1,5 +1,3 @@
-const Posts = require("../model/post");
+import { Posts } from "../model/post.js";
 
-module.exports = {
-  Posts,
-};
+export { Posts };

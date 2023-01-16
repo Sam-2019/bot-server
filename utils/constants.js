@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   news: {
     id: 1,
     name: "news",
@@ -26,6 +26,3 @@ const data = {
   },
 };
 
-module.exports = {
-  data,
-};

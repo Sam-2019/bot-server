@@ -1,7 +1,7 @@
-const { Telegraf } = require("telegraf");
-const { TOKEN } = require("../config");
-const { postTransformer } = require("../transformer");
-const bot = new Telegraf(TOKEN);
+import { Telegraf } from "telegraf";
+import { TOKEN } from "../config.js";
+import { postTransformer } from "../transformer.js";
+export const bot = new Telegraf(TOKEN);
 
 bot.on("text", async (ctx) => {
   const url = ctx.message.text;
@@ -16,7 +16,3 @@ bot.on("text", async (ctx) => {
 
 process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
-
-module.exports = {
-  bot,
-};

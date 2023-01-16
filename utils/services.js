@@ -1,9 +1,5 @@
-const { bot } = require("./telegraf");
+import { bot } from "./telegraf/index.js";
 
-function services() {
+export function services() {
   bot.launch();
 }
-
-module.exports = {
-  services,
-};

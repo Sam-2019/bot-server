@@ -1,5 +1,8 @@
-const mongoose = require("mongoose");
-const { DB_URI } = require("../utils/config");
+import mongoose from "mongoose";
+import { DB_URI } from "../utils/config.js";
+
+
+console.log(DB_URI)
 
 mongoose.set("strictQuery", false);
 var dbConn = mongoose.connection;
@@ -7,7 +10,7 @@ dbConn.on("connected", function () {
   console.log("Mongoose connected");
 });
 
-const connectDB = () => {
+export const connectDB = () => {
   mongoose.connect(DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,5 +21,3 @@ const connectDB = () => {
 const disconnectDB = () => {
   mongoose.connection.close();
 };
-
-module.exports = { connectDB, disconnectDB };

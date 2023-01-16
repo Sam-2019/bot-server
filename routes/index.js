@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const { AUTH_KEY } = require("../utils/config");
-const { switch_route } = require("../utils/switches");
+import express from "express";
+import { AUTH_KEY } from "../utils/config.js";
+import { switch_route } from "../utils/switches.js";
 
+const router = express.Router();
 router.get("/", (req, res) => {
   res.json({ message: "Konnichiwa" });
 });
@@ -30,4 +30,4 @@ router.get("/api/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+export { router };

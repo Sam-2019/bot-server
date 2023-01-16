@@ -1,7 +1,7 @@
-const linkPreviewGenerator = require("link-preview-generator");
-const { types } = require("./switches");
+import { linkPreviewGenerator } from "./link_preview.js";
+import { types } from "./switches.js";
 
-const postTransformer = async (url) => {
+export const postTransformer = async (url) => {
   const info = await linkPreviewGenerator(url);
 
   console.log(info);
@@ -12,8 +12,4 @@ const postTransformer = async (url) => {
 
   const output = types(info, url);
   return `saved ${output}`;
-};
-
-module.exports = {
-  postTransformer,
 };

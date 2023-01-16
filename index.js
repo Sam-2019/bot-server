@@ -1,7 +1,7 @@
-require("dotenv").config();
-const app = require('./app');
-const { PORT, NODE_ENV } = require("./utils/config");
-const { services } = require("./utils/services");
+import { app } from "./app.js";
+import { PORT, NODE_ENV } from "./utils/config.js";
+
+import { services } from "./utils/services.js";
 
 services();
 

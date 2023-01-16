@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
-const { dataSchema } = require("../schema");
+import mongoose from 'mongoose'
+import { dataSchema } from '../schema/index.js'
+export const Posts = mongoose.model("Posts", dataSchema);
 
-module.exports = mongoose.model("Posts", dataSchema);

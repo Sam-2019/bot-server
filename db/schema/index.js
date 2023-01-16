@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const dataSchema = new mongoose.Schema(
+export const dataSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -27,6 +27,3 @@ const dataSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = {
-  dataSchema,
-};

@@ -1,14 +1,14 @@
-const { data } = require("./constants");
-const {
+import { data } from "./constants.js";
+import {
   getAll,
   saveItem,
   getArt,
   getMovies,
   getTwitter,
   getJobs,
-} = require("../db/repository");
+} from "../db/repository/index.js";
 
-const switch_route = (type) => {
+export const switch_route = (type) => {
   let repository;
 
   switch (type) {
@@ -38,7 +38,7 @@ const switch_route = (type) => {
   return repository;
 };
 
-const types = (info, url) => {
+export const types = (info, url) => {
   const trim_url = url.split("?");
 
   if (data.news.sites.includes(info.domain)) {
@@ -80,9 +80,4 @@ const types = (info, url) => {
     saveItem(merge);
     return "success";
   }
-};
-
-module.exports = {
-  switch_route,
-  types,
 };
