@@ -6,14 +6,15 @@ export const bot = new Telegraf(TOKEN);
 
 bot.on("text", async (ctx) => {
   const url = ctx.message.text;
-  try {
-    const data = await axios.get(url);
-    if (data.status === 200) {
-      ctx.reply(await postTransformer(url));
-    }
-  } catch (error) {
-    ctx.reply("Unsupported website");
-  }
+    ctx.reply(await postTransformer(url));
+//   try {
+//     const data = await axios.get(url);
+//     if (data.status === 200) {
+//       ctx.reply(await postTransformer(url));
+//     }
+//   } catch (error) {
+//     ctx.reply("Unsupported website");
+//   }
 });
 
 
