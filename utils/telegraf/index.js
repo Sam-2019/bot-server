@@ -6,9 +6,11 @@ export const bot = new Telegraf(TOKEN);
 
 bot.on("text", async (ctx) => {
   const url = ctx.message.text;
+  console.log(url)
   try {
-    await axios.get(url);
-    ctx.reply(await postTransformer(url));
+    const waymo = await axios.get(url);
+    console.log(waymo)
+//     ctx.reply(await postTransformer(url));
   } catch (error) {
     ctx.reply("Unsupported website");
   }
