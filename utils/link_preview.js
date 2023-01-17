@@ -151,10 +151,6 @@ const getDomainName = async (page, uri) => {
     : new URL(uri).hostname.replace("www.", "");
 };
 
-function isCurrentUserRoot() {
-   return process.getuid() == 0; // UID 0 is always root
-}
-
 export const linkPreviewGenerator = async (
   uri,
   puppeteerAgent = "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
@@ -162,7 +158,7 @@ export const linkPreviewGenerator = async (
   puppeteer.use(pluginStealth());
   const browser = await puppeteer.launch({
     headless: true,
-     args: isCurrentUserRoot() ? ['--no-sandbox'] : undefined
+      args: ['--no-sandbox']
   });
   const page = await browser.newPage();
   page.setUserAgent(puppeteerAgent);
