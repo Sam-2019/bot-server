@@ -1,16 +1,15 @@
 import { Telegraf } from "telegraf";
+import axios from "axios";
 import { TOKEN } from "../config.js";
 import { postTransformer } from "../transformer.js";
 export const bot = new Telegraf(TOKEN);
 
 bot.on("text", async (ctx) => {
   const url = ctx.message.text;
-
   try {
-    await fetch(new URL(url));
-    const info = await postTransformer(url);
-    ctx.reply(info);
-  } catch (err) {
+    await axios.get(url);
+    ctx.reply(await postTransformer(url));
+  } catch (error) {
     ctx.reply("Unsupported website");
   }
 });
