@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
 import { DB_URI } from "../utils/config.js";
 
-
-console.log(DB_URI)
-
 mongoose.set("strictQuery", false);
 var dbConn = mongoose.connection;
 dbConn.on("connected", function () {
