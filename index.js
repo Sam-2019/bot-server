@@ -3,7 +3,6 @@ import { PORT, NODE_ENV } from "./utils/config.js";
 import { services } from "./utils/services.js";
 
 services();
-
 const port = PORT || 4000;
 
 app.listen(port, () => {
