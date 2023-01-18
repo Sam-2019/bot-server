@@ -38,46 +38,17 @@ export const switch_route = (type) => {
   return repository;
 };
 
-export const types = (info, url) => {
-  const trim_url = url.split("?");
+export const types = (info) => {
+  const data = {
+    title: info.title ? info.title : null,
+    description: info.description ? info.description : null,
+    domain: info.domain ? info.domain : null,
+    imgURL: info.image ? info.image[0] : null,
+    favicon: info.favicon ? info.favicon : null,
+    url: info.url ? info.url : null,
+    siteName: info.siteName ? info.siteName : null,
+  };
 
-  if (data.news.sites.includes(info.domain)) {
-    console.log(data.news.name);
-    const add = { type: data.news.name, url: trim_url[0] };
-    const merge = { ...info, ...add };
-    saveItem(merge);
-    return "success";
-  }
-
-  if (data.art.sites.includes(info.domain)) {
-    console.log(data.art.name);
-    const add = { type: data.art.name, url: trim_url[0] };
-    const merge = { ...info, ...add };
-    saveItem(merge);
-    return "success";
-  }
-
-  if (data.movies.sites.includes(info.domain)) {
-    console.log(data.movies.name);
-    const add = { type: data.movies.name, url: trim_url[0] };
-    const merge = { ...info, ...add };
-    saveItem(merge);
-    return "success";
-  }
-
-  if (data.jobs.sites.includes(info.domain)) {
-    console.log(data.jobs.name);
-    const add = { type: data.jobs.name, url: trim_url[0] };
-    const merge = { ...info, ...add };
-    saveItem(merge);
-    return "success";
-  }
-
-  if (data.twitter.sites.includes(info.domain)) {
-    console.log(data.twitter.name);
-    const add = { type: data.twitter.name, url: trim_url[0] };
-    const merge = { ...info, ...add };
-    saveItem(merge);
-    return "success";
-  }
+  saveItem(data);
+  return "success";
 };
