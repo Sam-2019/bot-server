@@ -1,8 +1,9 @@
-import { getLinkPreview } from "link-preview-js";
+// import { getLinkPreview } from "link-preview-js";
+import {linkPreviewGenerator} from './link_preview.js'
 import { types } from "./switches.js";
 
 export const postTransformer = async (url) => {
-  const info = await getLinkPreview(url);
+  const info = await linkPreviewGenerator(url);
 
   if (!info) {
     return "Unsupported website";
