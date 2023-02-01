@@ -12,9 +12,11 @@
   "private": false,
   "type": "module",
   "dependencies": {
+    "@nzambello/link-previewer": "^1.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "get-link-preview": "^1.0.6",
     "get-urls": "^11.0.0",
     "link-preview-generator": "^1.1.0",
     "link-preview-js": "^3.0.4",
