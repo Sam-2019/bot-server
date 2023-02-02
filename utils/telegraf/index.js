@@ -5,11 +5,13 @@ export const bot = new Telegraf(TOKEN);
 
 bot.on("text", async (ctx) => {
   const text = ctx.message.text;
-  try {
-    ctx.reply(await postTransformer(text));
-  } catch (error) {
-    ctx.reply("Unsupported website");
-  }
+//   ctx.reply(await postTransformer(text));
+  console.log(text)
+//   try {
+//     ctx.reply(await postTransformer(text));
+//   } catch (error) {
+//     ctx.reply("Unsupported website");
+//   }
 });
 
 
