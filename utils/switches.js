@@ -39,7 +39,6 @@ export const switch_route = (type) => {
 };
 
 export const types = async (info) => {
- console.log(info);
  const data = {
   title: info.title ? info.title : "",
   description: info.description ? info.description : "",
