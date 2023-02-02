@@ -151,6 +151,24 @@ const getDomainName = async (page, uri) => {
   : new URL(uri).hostname.replace("www.", "");
 };
 
+const getSiteName = async (page) => {
+ const siteName = await page.evaluate(() => {
+  const canonicalLink = document.querySelector("link[rel=alternate]");
+  if (canonicalLink != null && canonicalLink.href.length > 0) {
+   return canonicalLink.title;
+  }
+  const ogUrlMeta = document.querySelector('meta[property="og:site_name"]');
+  if (ogUrlMeta != null && ogUrlMeta.content.length > 0) {
+   return ogUrlMeta.content;
+  }
+  return null;
+ });
+ return siteName;
+};
+
+const getURL = async (uri) => {
+ return uri;
+};
 export const linkPreviewGenerator = async (
  uri,
  puppeteerAgent = "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
@@ -173,6 +191,8 @@ export const linkPreviewGenerator = async (
  obj.description = await getDescription(page);
  obj.domain = await getDomainName(page, uri);
  obj.img = await getImg(page, uri);
+ obj.url = await getURL(uri);
+ obj.sitename = await getSiteName(page);
 
  await browser.close();
  return obj;
