@@ -9,7 +9,7 @@ bot.on("text", async (ctx) => {
   const info = await postTransformer(text);
   ctx.reply(info);
  } catch (error) {
-  ctx.reply("failed");
+  ctx.reply(error);
  }
 });
 
