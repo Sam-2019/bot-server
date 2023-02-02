@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "bundle": "yarn install && yarn start",
     "runner": "node runner.js"
   },
   "author": "Sam-2019 <samtmartey@gmail.com>",
