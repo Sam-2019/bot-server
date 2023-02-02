@@ -158,7 +158,8 @@ export const linkPreviewGenerator = async (
   puppeteer.use(pluginStealth());
   const browser = await puppeteer.launch({
     headless: true,
-      args: ['--no-sandbox']
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      ignoreDefaultArgs: ['--disable-extensions']
   });
   const page = await browser.newPage();
   page.setUserAgent(puppeteerAgent);
