@@ -1,4 +1,5 @@
-import { Telegraf } from "telegraf";
+import pkg from 'telegraf';
+const { Telegraf } = pkg;
 import { TOKEN } from "../config.js";
 import { postTransformer } from "../transformer.js";
 export const bot = new Telegraf(TOKEN);
