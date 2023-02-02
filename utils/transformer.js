@@ -5,10 +5,10 @@ import { types } from "./switches.js";
 export const postTransformer = async (url) => {
  const info = await linkPreviewGenerator(url);
 
-  if (!info) {
-   return "Unsupported website";
+ if (!info) {
+  return "Unsupported website";
  }
 
- const output = types(info);
+ const output = await types(info);
  return String(output);
 };
