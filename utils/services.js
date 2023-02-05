@@ -1,5 +1,5 @@
 import { bot } from "./telegraf/index.js";
 
-export function services() {
+export async function services() {
   bot.launch();
 }
