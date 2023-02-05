@@ -47,6 +47,7 @@ export const types = (info) => {
     favicon: info.favicon ? info.favicon : null,
     url: info.url ? info.url : null,
     siteName: info.siteName ? info.siteName : null,
+    twitterID: info.twitterID ? info.twitterID : null,
   };
 
   saveItem(data);
