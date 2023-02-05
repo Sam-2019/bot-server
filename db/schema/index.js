@@ -17,10 +17,13 @@ export const dataSchema = new mongoose.Schema(
     favicon: {
       type: String,
     },
+    siteName: {
+      type: String,
+    },
     url: {
       type: String,
     },
-    siteName: {
+    twitterID: {
       type: String,
     },
   },
